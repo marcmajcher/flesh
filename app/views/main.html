@@ -1,0 +1,59 @@
+<div class="screen-main">
+	<h1 class="dyno-force"><span class="red">D</span><span class="yellow">Y</span><span class="blue">N</span><span class="green">O</span>-FORCE!</h1>
+
+	<div class="main-buttons" ng-if="gameData.state === gameState.IDLE">
+		<div>
+			<button class="btn btn-lg btn-primary" ng-click="findGames()">Find a Game</button>
+		</div>
+		<div>
+			<button class="btn btn-lg btn-success" ng-click="hostGame()" >Start New Game</button>
+		</div>
+	</div>
+	<div class="main-hosting" ng-if="gameData.state === gameState.HOSTING">
+		<h2>Team <span class="mech-name">{{gameData.hostName}}</span>!
+		<br>Waiting for players...</h2>
+		<div>
+			<ul class="player-list">
+				<li ng-repeat="(key, pilot) in gameData.foundPlayers">
+					<span class="pilot-name">{{pilot.name}}</span>
+				</li>
+			</ul>
+		</div>
+		<hr>
+		<div class="main-host-buttons">
+			<div ng-if="gameData.pilotCount > 1">
+				<button class="btn btn-lg btn-success" ng-click="startGame()">FIGHT!</button>
+			</div>
+			<div>
+				<button class="btn btn-lg btn-danger" ng-click="stopHost()">Cancel</button>
+			</div>
+		</div>
+	</div>
+	<div class="main-finding" ng-if="gameData.state === gameState.FINDING || gameData.state === gameState.JOINING">
+		<h2>Pilot <span class="pilot-name">{{gameData.pilotName}}</span><br>looking for a game...</h2>
+		<hr>
+		<h3>Available Hosts:</h3>
+		<div>
+			<ul class="host-list">
+				<li ng-repeat="(key, host) in gameData.foundHosts">
+					<h4>{{host.name}}</h4>
+					<button class="btn btn-lg btn-info" ng-click="joinHost(host.addr)" ng-if="gameData.state === gameState.FINDING">
+						JOIN
+					</button>
+					<button class="btn btn-lg btn-warning" ng-click="unjoinHost()" ng-if="gameData.state === gameState.JOINING">
+						CANCEL
+					</button>
+				</li>
+			</ul>
+		</div>
+		<hr>
+		<div class="main-find-buttons">
+			<div>
+				<button class="btn btn-lg btn-primary" ng-click="refreshKaiju()">Fight {{gameData.kaijuName}}</button>
+			</div>
+			<div>
+				<button class="btn btn-lg btn-danger" ng-click="cancelFind()">Return</button>
+			</div>
+		</div>
+	</div>
+</div>

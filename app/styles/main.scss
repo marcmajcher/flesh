@@ -1,0 +1,173 @@
+$icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+
+$color-blue: #0000cc;
+$color-green: #00cc00;
+$color-red: #cc0000;
+$color-yellow: #cccc00;
+
+$color-grey: #cccccc;
+$color-dark-red: #660000;
+$color-dark-blue: #000066;
+$color-dark-green: #006600;
+
+.red {
+  color: $color-red;
+}
+.yellow {
+  color: $color-yellow;
+}
+.blue {
+  color: $color-blue;
+}
+.green {
+  color: $color-green;
+}
+
+// bower:scss
+@import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
+// endbower
+
+/* Imported from cordova template */
+
+* {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+body {
+  -webkit-touch-callout: none;
+  -webkit-text-size-adjust: none;
+  -webkit-user-select: none;
+  background-color: black;
+
+  font-family: 'Roboto', 'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  color: $color-grey;
+}
+
+@font-face {
+  font-family: 'bulletproof';
+  src: url('./fonts/bulletproofbb.eot?#iefix') format('embedded-opentype'),  url('./fonts/bulletproofbb.woff') format('woff'), url('./fonts/bulletproofbb.ttf')  format('truetype'), url('./fonts/bulletproofbb.svg#bulletproofbb') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+h1.dyno-force {
+  font-family: 'bulletproof';
+  font-size: 10vw;
+  color: $color-grey;
+}
+
+.screen-splash {
+  padding-top: 30px;
+  text-align: center;
+
+  .btn {
+    font-size: 7vw;
+    padding: 14px 24px;
+    margin-top: 20px;
+
+    .go-btn {
+      font-size: 8vw;
+    }
+  }
+
+  .container-img {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .image-splash {
+    padding: 20px 40px;
+    width: 100%;
+    height: auto;
+  }
+}
+
+.screen-main {
+  padding: 30px;
+  text-align: center;
+
+  button {
+    margin: 20px;
+    font-size: 5vw;
+  }
+
+  .main-buttons {
+    margin-top: 50px;
+  }
+
+  .btn-danger {
+    font-size: 4vw;
+  }
+
+  .main-find-buttons, .main-host-buttons {
+    position: absolute;
+    bottom: 1vw;
+    width: 100%;
+
+    button {
+      margin: 10px;
+    }
+  }
+}
+
+.btn {
+  font-family: 'bulletproof';
+}
+
+.btn-success {
+  background-color: $color-green;
+}
+
+
+
+.host-list {
+  list-style-type: none;
+}
+
+.player-list {
+  list-style-type: none;
+}
+
+.pilot-name {
+  font-weight: bold;
+  color: $color-blue;
+}
+
+.mech-name {
+  font-weight: bold;
+  color: $color-green;
+}
+
+
+
+.fade {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  opacity: 1;
+}
+.fade.ng-enter,
+.fade.ng-leave {
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+}
+.fade.ng-enter {
+  opacity: 0;
+}
+.fade.ng-enter-active {
+  opacity: 1;
+}
+.fade.ng-leave {
+  opacity: 1;
+}
+.fade.ng-leave-active {
+  opacity: 0;
+}
